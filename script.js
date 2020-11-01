@@ -102,11 +102,17 @@ function reset() {
 }
 
 // Event listeners for keyboard input and the reset
-testArea.addEventListener("keypress", start, false);
-testArea.addEventListener("keyup", spellCheck, false);
-resetButton.addEventListener("click", reset, false);
-testArea.addEventListener("keypress", wordsPerMinute, false); //start wpm calculations
 
+//testArea.addEventListener("keypress", start, false); 	//keypress event deprceated
+testArea.addEventListener("keydown", start, false); //start timers 
+
+
+//testArea.addEventListener("keypress", wordsPerMinute, false);  //keypress event deprceated
+testArea.addEventListener("keydown", wordsPerMinute, false); //start wpm calculations
+
+
+testArea.addEventListener("keyup", spellCheck, false); 
+resetButton.addEventListener("click", reset, false); //reset the page
 
 
 
